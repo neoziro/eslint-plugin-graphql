@@ -412,6 +412,29 @@ const parserOptions = {
 
 {
   const options = [
+    { schemaJson, env: 'fraql' },
+  ];
+
+  ruleTester.run('fraql', rule, {
+    valid: [
+      {
+        options,
+        parserOptions,
+        code: 'const x = gql`{ number } ${x}`',
+      },
+      {
+        options,
+        parserOptions,
+        code: 'const x = gql`query { ${x} }`',
+      },
+    ],
+
+    invalid: [],
+  })
+}
+
+{
+  const options = [
     {
       schemaJson,
       env: 'relay',
