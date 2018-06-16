@@ -498,8 +498,6 @@ function replaceExpressions(node, context, env) {
     }
   });
 
-  console.log(chunks.join(''))
-
   return chunks.join('');
 }
 
